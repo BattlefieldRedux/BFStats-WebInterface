@@ -8,9 +8,10 @@
  *
  */
 use System\Battlefield2;
+use System\BF2\Player;
+use System\BF2\RankCalculator;
 use System\Database\UpdateOrInsertQuery;
 use System\IO\File;
-use System\Player;
 use System\TimeHelper;
 use System\TimeSpan;
 use System\View;
@@ -18,8 +19,8 @@ use System\View;
 /**
  * Player Model
  *
- * @package Models
- * @subpackage Players
+ * @package Players
+ * @subpackage Models
  */
 class PlayerModel
 {

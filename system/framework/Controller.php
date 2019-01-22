@@ -3,13 +3,12 @@
  * BF2Statistics ASP Framework
  *
  * Author:       Steven Wilson
- * Copyright:    Copyright (c) 2006-2018, BF2statistics.com
+ * Copyright:    Copyright (c) 2006-2019, BF2statistics.com
  * License:      GNU GPL v3
  *
  */
 
 namespace System;
-
 use System\IO\File;
 use System\IO\Path;
 
@@ -141,6 +140,8 @@ abstract class Controller
     {
         $params['success'] = $success;
         $params['message'] = $message;
+        if (!$success)
+            $params['error'] = $message;
         echo json_encode($params, JSON_PRETTY_PRINT);
     }
 }

@@ -3,7 +3,7 @@
  * BF2Statistics ASP Framework
  *
  * Author:       Steven Wilson
- * Copyright:    Copyright (c) 2006-2018, BF2statistics.com
+ * Copyright:    Copyright (c) 2006-2019, BF2statistics.com
  * License:      GNU GPL v3
  *
  */
@@ -79,7 +79,11 @@ class PlayerAjaxModel
                     return number_format($d);
                 }
             ],
-            ['db' => 'country', 'dt' => 'country'],
+            ['db' => 'country', 'dt' => 'country',
+                'formatter' => function( $d, $row ) {
+                    return "<img class='center flag' src=\"/ASP/frontend/images/flags/{$d}.png\">";
+                }
+            ],
             ['db' => 'joined', 'dt' => 'joined',
                 'formatter' => function( $d, $row ) {
                     $i = (int)$d;
